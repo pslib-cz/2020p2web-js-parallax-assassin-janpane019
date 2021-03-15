@@ -27,7 +27,6 @@
     </section>
     <script>
         var par_container = document.getElementsByClassName("parallax-container")[0];
-        var layer_bg = par_container.getElementsByClassName("layer-background")[0];
         var layer_1 = par_container.getElementsByClassName("layer-1")[0];
         var layer_2 = par_container.getElementsByClassName("layer-2")[0];
         var layer_man = par_container.getElementsByClassName("layer-man")[0];
@@ -35,13 +34,17 @@
         window.onscroll = (e) =>
         {
             var scrY = window.scrollY;
+
             // layer-1
-            layer_1.style.transform = "translateY(" + scrY*-.8+ "px)";
+            layer_1.style.transform = "translateY(" + scrY*-.7+ "px)";
+
             // layer-2
-            layer_2.style.transform = "translateY(" + scrY*-.7 + "px)";
+            layer_2.style.transform = "translateY(" + scrY*-.5 + "px)";
+
             // layer-man
             layer_man.style.transform = "translateY(" + scrY*-.6 + "px)"; // translateX(" + scrY*-.2 + "px)
             layer_man.style.backgroundSize  = 100 + scrY/15  + "%";
+            layer_man.style.backgroundPosition  = scrY*-1 + "px " + "bottom";
 
             // layer-4
             layer_4.style.transform = "translateY(" + scrY*-1 + "px)";
